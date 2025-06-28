@@ -6,4 +6,5 @@ seaborn
 matplotlib
 plotly
 folium
+streamlit-folium
 kaggle
