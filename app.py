@@ -1,4 +1,5 @@
 import os
+import json
 import zipfile
 import pandas as pd
 import numpy as np
@@ -21,12 +22,13 @@ def download_kaggle_dataset():
         st.info("📦 Downloading dataset from Kaggle...")
         
         # Write kaggle.json from secrets
-        kaggle_json = st.secrets["kaggle_json"]  # get from Streamlit secrets
+       
+
+        kaggle_dict = dict(st.secrets["kaggle_json"])
         os.makedirs(os.path.expanduser("~/.kaggle"), exist_ok=True)
         with open(os.path.expanduser("~/.kaggle/kaggle.json"), "w") as f:
-            f.write(kaggle_json)
+            json.dump(kaggle_dict, f)
         os.chmod(os.path.expanduser("~/.kaggle/kaggle.json"), 0o600)
-
         # Create data folder
         os.makedirs("data", exist_ok=True)
 
