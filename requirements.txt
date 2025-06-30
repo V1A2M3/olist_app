@@ -8,4 +8,4 @@ plotly
 folium
 streamlit-folium
 kaggle
-tensorflow-cpu==2.14.0
+tensorflow-cpu
