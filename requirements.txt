@@ -8,3 +8,4 @@ plotly
 folium
 streamlit-folium
 kaggle
+tensorflow==2.14.0
